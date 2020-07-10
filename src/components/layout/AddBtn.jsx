@@ -1,11 +1,10 @@
 import React from 'react'
 
-
-const AddBtn = props => {
+const AddBtn = () => {
      return (
           <div className="fixed-action-btn">
                <a 
-                    className="btn-floating btn-medium blue darken-2 modal-trigger"
+                    className="btn-floating btn-large blue darken-2 modal-trigger"
                     href="#add-log-modal"  
                >
                     <i className="material-icons">add</i>
@@ -20,12 +19,13 @@ const AddBtn = props => {
                     </li>
                     <li 
                          className="btn-floating red modal-trigger"
-                         href="#tech-modal" 
+                         href="#add-tech-modal" 
                     >
                         <i className="material-icons">person_add</i>
                     </li>
                     
                </ul>
+             
           </div>
      )
 }

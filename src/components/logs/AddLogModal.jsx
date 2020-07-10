@@ -2,20 +2,25 @@ import React, { useState } from 'react';
 import M from "materialize-css";
 const AddLogModal = () => {
 
-     const [messsage, setMessage] = useState("");
+     const [message, setMessage] = useState("");
      const [attention, setAttention]= useState(false);
      const [tech, setTech] = useState("");
 
      const onSubmit = () => {
           
-          if(messsage === ""){
+          if(message === ""){
                M.toast({ html: "Please enter a message." })
           }
           else if(tech === ""){
                M.toast({ html: "Please select a Technician." })
           }
           else{
-               console.log(messsage, tech, attention);
+               console.log(message, tech, attention);
+               
+               // clear fields
+               setMessage("");
+               setAttention(false);
+               setTech("");
           }
      }
      return (
@@ -28,7 +33,8 @@ const AddLogModal = () => {
 
                     <div className="row">
                         <div className="input-field">
-                        <input type="text" name="message" value={messsage} 
+                        <input 
+                              type="text" name="message" value={message} 
                               onChange={event => setMessage(event.target.value)}
                          />
                          <label htmlFor="message" className="active">
@@ -36,7 +42,7 @@ const AddLogModal = () => {
                          </label>
                         </div>
                     </div>
-                    
+
                     <div className="row">
                         <div className="input-field">
                               <select 
@@ -79,7 +85,8 @@ const AddLogModal = () => {
                </div>
           </div>
      )
-}
+};
+
 const modalStyle= {
      width: "75%",
      height: "75%"
